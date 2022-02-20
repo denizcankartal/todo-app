@@ -1,0 +1,5 @@
+com/sideprojects/todo/service/TodoService.class
+com/sideprojects/todo/TodoApplication.class
+com/sideprojects/todo/entity/Todo.class
+com/sideprojects/todo/controller/TodoController.class
+com/sideprojects/todo/repository/TodoRepository.class

@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  app:
+    build: ./todo-backend/
+    restart: always
+    ports:
+      - 5000:8080 # local_range:docker
+    depends_on:
+      - mysql_server
+    environment:
+      MYSQL_HOST: mysql_server
+      MYSQL_DATABASE: todo_database
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      MYSQL_PORT: 3306
+
+  mysql_server:
+    container_name: mysql_server
+    image: mysql:8.0
+    restart: always
+    environment:
+      - MYSQL_DATABASE=todo_database
+      - MYSQL_ROOT_PASSWORD=password
+    ports:
+      - 4444:3306
+    volumes:
+      - mysql-data:/var/lib/mysql
+volumes:
+  mysql-data:

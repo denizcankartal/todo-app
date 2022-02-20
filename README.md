@@ -1,15 +1,14 @@
-### How to start the application?
-#### MySQL server image for development/testing etc.
-```
-$ cd todo-backend/mysql-server-for-testing
-$ docker-compose up
-```
-
-#### MYSQL Server and the todo-app
-```
-$ # at the root directory
-$ docker-compose up
-```
+### Starting the spring-boot application and MySQL Server
+- Project contains two docker-compose files, one for development/testing etc. and another for deployment.
+- The docker-compose file for development uses the official docker image from MySQL and can be started as follows.
+  ```
+  $ cd todo-backend/mysql-server-for-testing
+  $ docker-compose up
+  ```
+- The docker-compose file at the root of the project builds the app docker container and the MySQL server. Once maven is used to build the jar file, the following command at the root of the project can be issued to start the application.
+  ```
+  $ docker-compose up
+  ```
 
 ### EXAMPLE API REQUESTS AND RESPONSES
 #### GET ALL TODOS
